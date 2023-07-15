@@ -11,26 +11,38 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
+    let images: [(title: String, url: String)] = [
+        (title: "ラベンダー畑", url: "https://1.bp.blogspot.com/-tN6cxEx1kvM/X7zMFOAnmQI/AAAAAAABcX4/4UjrbGfFHIE59wHINvkF03bzXmL3FzMSACNcBGAsYHQ/s400/bg_lavender_flower.jpg")
+    ]
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        let image = images.first!
+        return SimpleEntry(
+            date: Date(),
+            imageUrl: URL(string: image.url),
+            title: image.title
+        )
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        let image = images.first!
+        let entry = SimpleEntry(
+            date: Date(),
+            imageUrl: URL(string: image.url),
+            title: image.title
+        )
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
-        }
-
+        let image = images.first!
+        let entry = SimpleEntry(
+            date: Date(),
+            imageUrl: URL(string: image.url),
+            title: image.title
+        )
+        entries.append(entry)
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -38,14 +50,24 @@ struct Provider: IntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+    let imageUrl: URL?
+    let title: String
 }
 
 struct SimpleWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        ZStack(alignment: .bottom) {
+            NetworkImage(url: entry.imageUrl) {
+                ProgressView()
+            }
+            Text(entry.title)
+                .font(.caption2)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 2, x: 2, y: 2)
+                .padding(.all, 11)
+        }
     }
 }
 
@@ -63,7 +85,13 @@ struct SimpleWidget: Widget {
 
 struct SimpleWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SimpleWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        let imageUrl = "https://1.bp.blogspot.com/-tN6cxEx1kvM/X7zMFOAnmQI/AAAAAAABcX4/4UjrbGfFHIE59wHINvkF03bzXmL3FzMSACNcBGAsYHQ/s400/bg_lavender_flower.jpg"
+        let entry = SimpleEntry(
+            date: Date(),
+            imageUrl: URL(string: imageUrl),
+            title: "ラベンダー畑"
+        )
+        SimpleWidgetEntryView(entry: entry)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
