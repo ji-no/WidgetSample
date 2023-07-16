@@ -20,6 +20,7 @@
 		3B2AC7922A62E1B500065922 /* SimpleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC78D2A62E1B400065922 /* SimpleWidget.intentdefinition */; };
 		3B2AC7952A62E1B500065922 /* SimpleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3B2AC7822A62E1B400065922 /* SimpleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3B2AC79F2A62EB4100065922 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC79D2A62EAEF00065922 /* NetworkImage.swift */; };
+		3B2AC7A22A643F2300065922 /* ImageListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC7A02A643EB100065922 /* ImageListService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3B2AC78E2A62E1B500065922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2AC7902A62E1B500065922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2AC79D2A62EAEF00065922 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
+		3B2AC7A02A643EB100065922 /* ImageListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				3B2AC7892A62E1B400065922 /* SimpleWidgetBundle.swift */,
 				3B2AC78B2A62E1B400065922 /* SimpleWidget.swift */,
 				3B2AC79D2A62EAEF00065922 /* NetworkImage.swift */,
+				3B2AC7A02A643EB100065922 /* ImageListService.swift */,
 				3B2AC78D2A62E1B400065922 /* SimpleWidget.intentdefinition */,
 				3B2AC78E2A62E1B500065922 /* Assets.xcassets */,
 				3B2AC7902A62E1B500065922 /* Info.plist */,
@@ -256,6 +259,7 @@
 			files = (
 				3B2AC78A2A62E1B400065922 /* SimpleWidgetBundle.swift in Sources */,
 				3B2AC79F2A62EB4100065922 /* NetworkImage.swift in Sources */,
+				3B2AC7A22A643F2300065922 /* ImageListService.swift in Sources */,
 				3B2AC78C2A62E1B400065922 /* SimpleWidget.swift in Sources */,
 				3B2AC7912A62E1B500065922 /* SimpleWidget.intentdefinition in Sources */,
 			);
