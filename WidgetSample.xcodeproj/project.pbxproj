@@ -21,6 +21,11 @@
 		3B2AC7952A62E1B500065922 /* SimpleWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3B2AC7822A62E1B400065922 /* SimpleWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3B2AC79F2A62EB4100065922 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC79D2A62EAEF00065922 /* NetworkImage.swift */; };
 		3B2AC7A22A643F2300065922 /* ImageListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC7A02A643EB100065922 /* ImageListService.swift */; };
+		96283A4D2A66896400503CF2 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96283A4C2A66896300503CF2 /* Intents.framework */; };
+		96283A502A66896400503CF2 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96283A4F2A66896400503CF2 /* IntentHandler.swift */; };
+		96283A652A66896400503CF2 /* SimpleWidgetIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 96283A4B2A66896300503CF2 /* SimpleWidgetIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		96283A6C2A668AB000503CF2 /* SimpleWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC78D2A62E1B400065922 /* SimpleWidget.intentdefinition */; };
+		96283A6E2A66932000503CF2 /* ImageListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AC7A02A643EB100065922 /* ImageListService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,13 @@
 			remoteGlobalIDString = 3B2AC7812A62E1B400065922;
 			remoteInfo = SimpleWidgetExtension;
 		};
+		96283A632A66896400503CF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B2AC7472A62CFFA00065922 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96283A4A2A66896300503CF2;
+			remoteInfo = SimpleWidgetIntents;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +52,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				96283A652A66896400503CF2 /* SimpleWidgetIntents.appex in Embed Foundation Extensions */,
 				3B2AC7952A62E1B500065922 /* SimpleWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -63,6 +76,12 @@
 		3B2AC7902A62E1B500065922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2AC79D2A62EAEF00065922 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		3B2AC7A02A643EB100065922 /* ImageListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListService.swift; sourceTree = "<group>"; };
+		96283A4B2A66896300503CF2 /* SimpleWidgetIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SimpleWidgetIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		96283A4C2A66896300503CF2 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		96283A4F2A66896400503CF2 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		96283A512A66896400503CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96283A572A66896400503CF2 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		96283A6D2A668ADA00503CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +101,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96283A482A66896300503CF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96283A4D2A66896400503CF2 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +117,7 @@
 			children = (
 				3B2AC7512A62CFFA00065922 /* WidgetSample */,
 				3B2AC7882A62E1B400065922 /* SimpleWidget */,
+				96283A4E2A66896400503CF2 /* SimpleWidgetIntents */,
 				3B2AC7832A62E1B400065922 /* Frameworks */,
 				3B2AC7502A62CFFA00065922 /* Products */,
 			);
@@ -100,6 +128,7 @@
 			children = (
 				3B2AC74F2A62CFFA00065922 /* WidgetSample.app */,
 				3B2AC7822A62E1B400065922 /* SimpleWidgetExtension.appex */,
+				96283A4B2A66896300503CF2 /* SimpleWidgetIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +136,7 @@
 		3B2AC7512A62CFFA00065922 /* WidgetSample */ = {
 			isa = PBXGroup;
 			children = (
+				96283A6D2A668ADA00503CF2 /* Info.plist */,
 				3B2AC7522A62CFFA00065922 /* WidgetSampleApp.swift */,
 				3B2AC7542A62CFFA00065922 /* ContentView.swift */,
 				3B2AC7562A62CFFB00065922 /* Assets.xcassets */,
@@ -128,6 +158,8 @@
 			children = (
 				3B2AC7842A62E1B400065922 /* WidgetKit.framework */,
 				3B2AC7862A62E1B400065922 /* SwiftUI.framework */,
+				96283A4C2A66896300503CF2 /* Intents.framework */,
+				96283A572A66896400503CF2 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +178,15 @@
 			path = SimpleWidget;
 			sourceTree = "<group>";
 		};
+		96283A4E2A66896400503CF2 /* SimpleWidgetIntents */ = {
+			isa = PBXGroup;
+			children = (
+				96283A4F2A66896400503CF2 /* IntentHandler.swift */,
+				96283A512A66896400503CF2 /* Info.plist */,
+			);
+			path = SimpleWidgetIntents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +203,7 @@
 			);
 			dependencies = (
 				3B2AC7942A62E1B500065922 /* PBXTargetDependency */,
+				96283A642A66896400503CF2 /* PBXTargetDependency */,
 			);
 			name = WidgetSample;
 			productName = WidgetSample;
@@ -185,6 +227,23 @@
 			productReference = 3B2AC7822A62E1B400065922 /* SimpleWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		96283A4A2A66896300503CF2 /* SimpleWidgetIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96283A6B2A66896400503CF2 /* Build configuration list for PBXNativeTarget "SimpleWidgetIntents" */;
+			buildPhases = (
+				96283A472A66896300503CF2 /* Sources */,
+				96283A482A66896300503CF2 /* Frameworks */,
+				96283A492A66896300503CF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleWidgetIntents;
+			productName = SimpleWidgetIntents;
+			productReference = 96283A4B2A66896300503CF2 /* SimpleWidgetIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,7 +251,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					3B2AC74E2A62CFFA00065922 = {
@@ -200,6 +259,9 @@
 					};
 					3B2AC7812A62E1B400065922 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					96283A4A2A66896300503CF2 = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
@@ -218,6 +280,7 @@
 			targets = (
 				3B2AC74E2A62CFFA00065922 /* WidgetSample */,
 				3B2AC7812A62E1B400065922 /* SimpleWidgetExtension */,
+				96283A4A2A66896300503CF2 /* SimpleWidgetIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -237,6 +300,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B2AC78F2A62E1B500065922 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96283A492A66896300503CF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +335,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		96283A472A66896300503CF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96283A6C2A668AB000503CF2 /* SimpleWidget.intentdefinition in Sources */,
+				96283A502A66896400503CF2 /* IntentHandler.swift in Sources */,
+				96283A6E2A66932000503CF2 /* ImageListService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -272,6 +352,11 @@
 			isa = PBXTargetDependency;
 			target = 3B2AC7812A62E1B400065922 /* SimpleWidgetExtension */;
 			targetProxy = 3B2AC7932A62E1B500065922 /* PBXContainerItemProxy */;
+		};
+		96283A642A66896400503CF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96283A4A2A66896300503CF2 /* SimpleWidgetIntents */;
+			targetProxy = 96283A632A66896400503CF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -401,6 +486,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,6 +516,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetSample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -500,6 +587,56 @@
 			};
 			name = Release;
 		};
+		96283A662A66896400503CF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleWidgetIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleWidgetIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WidgetSample.SimpleWidgetIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96283A672A66896400503CF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SimpleWidgetIntents/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleWidgetIntents;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.WidgetSample.SimpleWidgetIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -526,6 +663,15 @@
 			buildConfigurations = (
 				3B2AC7972A62E1B500065922 /* Debug */,
 				3B2AC7982A62E1B500065922 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96283A6B2A66896400503CF2 /* Build configuration list for PBXNativeTarget "SimpleWidgetIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96283A662A66896400503CF2 /* Debug */,
+				96283A672A66896400503CF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

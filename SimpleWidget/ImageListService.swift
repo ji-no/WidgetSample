@@ -24,9 +24,17 @@ class ImageListService {
         (title: "ホログラムシール", url: "https://4.bp.blogspot.com/-aOCh3m2lvJs/WEVof8kUhjI/AAAAAAABANo/nd7um4KXL3QMh7AahC2gAsGFq7sI2qvrgCLcB/s180-c/hologram_kira_sticker_color.png"),
     ]
 
-    func fetch() -> Future<[ImageInfo], Never> {
+    func fetch(keyword: String?) -> Future<[ImageInfo], Never> {
         return Future() { promise in
-            promise(Result.success(self.images))
+            guard let keyword = keyword, !keyword.isEmpty else {
+                promise(Result.success(self.images))
+                return
+            }
+            let images = self.images.filter { image in
+                image.title == keyword
+            }
+            
+            promise(Result.success(images))
         }
     }
     

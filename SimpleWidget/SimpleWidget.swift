@@ -24,8 +24,8 @@ struct Provider: IntentTimelineProvider {
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         var cancellables: [AnyCancellable] = []
-
-        imageListService.fetch()
+        
+        imageListService.fetch(keyword: configuration.name)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -48,7 +48,7 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var cancellables: [AnyCancellable] = []
 
-        imageListService.fetch()
+        imageListService.fetch(keyword: configuration.name)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
