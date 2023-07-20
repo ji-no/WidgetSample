@@ -18,6 +18,10 @@ import Combine
 // "Search for messages in <myApp>"
 
 class IntentHandler: INExtension, ConfigurationIntentHandling {
+    func resolveShowTitle(for intent: ConfigurationIntent, with completion: @escaping (INBooleanResolutionResult) -> Void) {
+        completion(.success(with: true))
+    }
+    
     private var imageListService = ImageListService()
 
     func provideNameOptionsCollection(for intent: ConfigurationIntent, searchTerm: String?, with completion: @escaping (INObjectCollection<NSString>?, Error?) -> Void) {

@@ -66,7 +66,7 @@ struct Provider: IntentTimelineProvider {
                         let entry = SimpleEntry(
                             date: entryDate,
                             imageUrl: URL(string: image.url),
-                            title: image.title
+                            title: (configuration.showTitle == true) ? image.title : ""
                         )
                         return entry
                     }
