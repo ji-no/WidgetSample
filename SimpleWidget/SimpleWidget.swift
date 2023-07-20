@@ -88,15 +88,30 @@ struct SimpleWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            NetworkImage(url: entry.imageUrl) {
-                ProgressView()
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                NetworkImage(url: entry.imageUrl) {
+                    ProgressView()
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                LinearGradient(
+                    gradient: Gradient(
+                        colors: [
+                            .clear,
+                            .init(white: 0, opacity: 0.5)
+                        ]
+                    ),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(width: geometry.size.width, height: geometry.size.height / 3)
+                Text(entry.title)
+                    .font(.caption2)
+                    .foregroundColor(.white)
+                    .shadow(color: .black, radius: 2, x: 2, y: 2)
+                    .padding(.all, 11)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 3)
             }
-            Text(entry.title)
-                .font(.caption2)
-                .foregroundColor(.white)
-                .shadow(color: .black, radius: 2, x: 2, y: 2)
-                .padding(.all, 11)
         }
     }
 }
